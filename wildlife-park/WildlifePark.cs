@@ -1,5 +1,5 @@
 using System;
-using WildLifePark.Models.ListOfAnimals;
+using WildLifePark.Models;
 
 namespace WildLifePark 
 {
@@ -21,7 +21,7 @@ namespace WildLifePark
                     Console.WriteLine("Enter name: ");
                     string name = Console.ReadLine();
                     Console.WriteLine("Enter age: ");
-                    string age = Console.ReadLine();
+                    int age = int.Parse(Console.ReadLine());
                     listOfAnimals.AddAnimal(species, name, age);
                 } 
                 else if (answer == "remove") 
@@ -30,7 +30,7 @@ namespace WildLifePark
                     string removeAnswer = Console.ReadLine();
                     if (removeAnswer == "id") 
                     {
-                        string idToRemove = Console.ReadLine();
+                        int idToRemove = int.Parse(Console.ReadLine());
                         if (listOfAnimals.RemoveAnimalById(idToRemove))
                         {
                             Console.WriteLine("Animal with id " + idToRemove + " was deleted successfully.");
@@ -42,7 +42,7 @@ namespace WildLifePark
                     } 
                     else if (removeAnswer == "name") {
                         string nameToRemove = Console.ReadLine();
-                        if (listOfAnimals.RemoveAnimalByname(nameToRemove))
+                        if (listOfAnimals.RemoveAnimalByName(nameToRemove))
                         {
                             Console.WriteLine("Animal with name " + nameToRemove + " was deleted successfully.");
                         } 
@@ -53,7 +53,7 @@ namespace WildLifePark
                     } 
                     else if (removeAnswer == "species") {
                         string speciesToRemove = Console.ReadLine();
-                        if (listOfAnimals.RemoveAnimalBySpecies(spreciesToRemove))
+                        if (listOfAnimals.RemoveAnimalBySpecies(speciesToRemove))
                         {
                             Console.WriteLine("Animal with species " + speciesToRemove + " was deleted successfully.");
                         } 
@@ -71,23 +71,23 @@ namespace WildLifePark
                     string findAnswer = Console.ReadLine();
                     if (findAnswer == "id") 
                     {
-                        string idToFind = Console.ReadLine();
+                        int idToFind = int.Parse(Console.ReadLine());
                         Console.WriteLine(listOfAnimals.FindAnimalById(idToFind));
                     } 
                         else if (findAnswer == "name") {
                         string nameToFind = Console.ReadLine();
-                        Console.WriteLine(listOfAnimals.FindAnimalByname(nameToFind));
+                        Console.WriteLine(listOfAnimals.FindAnimalByName(nameToFind));
                     } 
                     else if (findAnswer == "species") {
                         string speciesToFind = Console.ReadLine();
-                        Console.WriteLine(listOfAnimals.FindAnimalBySpecies(spreciesToFind));
+                        Console.WriteLine(listOfAnimals.FindAnimalsBySpecies(speciesToFind));
                     } else {
                         Console.WriteLine("Something went wrong!");
                     }
                 }
                 else if (answer == "animal list") 
                 {
-                    Console.WriteLine(listOfAnimals.GetListOfAnimals);
+                    Console.WriteLine(listOfAnimals.GetListOfAnimals());
                 } 
                 else if (answer == "quit") 
                 {

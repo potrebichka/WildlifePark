@@ -1,11 +1,11 @@
-namespace WildLifePark {
+namespace WildLifePark.Models {
     class Animal {
         private string _species;
         private string _name;
         private int _age;
         private int _id;
 
-        public void Animal(string species, string name, int age, int id) {
+        public Animal(string species, string name, int age, int id) {
             _species = species;
             _name = name;
             _age = age;
@@ -20,11 +20,11 @@ namespace WildLifePark {
             return _name;
         }
 
-        public string GetAge() {
+        public int GetAge() {
             return _age;
         }
 
-        public string GetId() {
+        public int GetId() {
             return _id;
         }
     }
